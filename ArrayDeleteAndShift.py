@@ -1,23 +1,27 @@
-def getByIndex(arr,n,idx):
-    if idx>=n:
-        return -1
-    else:
-        return arr[idx]
-     
+def deleteFromArray(arr,n,idx):
+    for i in range(idx,n-1):
+        arr[i] = arr[i+1]
+    arr[n-1] = 0
+    return
 
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
 
-#contributed by RavinderSinghPB
+#CONTRIBUTED BY RavinderSinghPB
 if __name__ == '__main__':
-    tcs=int(input())
+    tcs= int(input())
     
     for _ in range(tcs):
         n=int(input())
-        arr=[int(x) for x in input().split()]
-        
         idx=int(input())
         
-        print(getByIndex(arr,n,idx))
+        arr=[i+1 for i in range(n)]
+        
+        deleteFromArray(arr,n,idx)
+        
+        for e in arr:
+            print(e,end=' ')
+        print()
+        
 # } Driver Code Ends
